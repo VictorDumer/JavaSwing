@@ -11,6 +11,8 @@ public class Tela extends JFrame{
     private JButton Confirmar,Excluir,Limpar;
     private JCheckBox checkFornecedor;
 
+    
+
     public Tela(){
         super("Tela de cadastro");
         Janela();
@@ -45,11 +47,12 @@ public class Tela extends JFrame{
             Nome.setVerticalAlignment(JLabel.CENTER);
             Nome.setHorizontalAlignment(JLabel.CENTER);
 
-            Cpf = new JLabel("Cpf/Cnpj..");
-            Cpf.setBounds(30,150,170,30);
+            Cpf = new JLabel("CPF/CNPJ ...");
+            Cpf.setBounds(390,110,170,30);
             Cpf.setBorder(BorderFactory.createLineBorder(Color.black));
             Cpf.setVerticalAlignment(JLabel.CENTER);
             Cpf.setHorizontalAlignment(JLabel.CENTER);
+            tela.add(Cpf);
 
             Rg = new JLabel("RG / Incrição Estadual");
             Rg.setBounds(30,190,170,30);
@@ -95,13 +98,13 @@ public class Tela extends JFrame{
             Bairro.setHorizontalAlignment(JLabel.CENTER);
 
             Expedor = new JLabel("Orgão Expedor");
-            Expedor.setBounds(30,0,170,30);
+            Expedor.setBounds(390,190,170,30);
             Expedor.setBorder(BorderFactory.createLineBorder(Color.black));
             Expedor.setVerticalAlignment(JLabel.CENTER);
             Expedor.setHorizontalAlignment(JLabel.CENTER);
 
             Cep = new JLabel("CEP");
-            Cep.setBounds(30,0,170,30);
+            Cep.setBounds(580,230,170,30);
             Cep.setBorder(BorderFactory.createLineBorder(Color.black));
             Cep.setVerticalAlignment(JLabel.CENTER);
             Cep.setHorizontalAlignment(JLabel.CENTER);
@@ -113,7 +116,7 @@ public class Tela extends JFrame{
             Complemento.setHorizontalAlignment(JLabel.CENTER);
             
             Uf = new JLabel("UF ...");
-            Uf.setBounds(30,0,170,30);
+            Uf.setBounds(580,270,170,30);
             Uf.setBorder(BorderFactory.createLineBorder(Color.black));
             Uf.setVerticalAlignment(JLabel.CENTER);
             Uf.setHorizontalAlignment(JLabel.CENTER);
@@ -131,10 +134,11 @@ public class Tela extends JFrame{
             Situacao.setHorizontalAlignment(JLabel.CENTER);
 
             Fornecedor = new JLabel("Fornecedor");
-            Fornecedor.setBounds(30,0,170,30);
+            Fornecedor.setBounds(800,110,170,30);
             Fornecedor.setBorder(BorderFactory.createLineBorder(Color.black));
             Fornecedor.setVerticalAlignment(JLabel.CENTER);
             Fornecedor.setHorizontalAlignment(JLabel.CENTER);
+            tela.add(Fornecedor);
         //!------------ parte dos textos ---------------
 
 
@@ -144,20 +148,61 @@ public class Tela extends JFrame{
         //?------------ Entrada de dados ---------------
 
             envTipo = new JTextField(20);
+
+
             envNome = new JTextField(100);
+            envNome.setBounds(210,150,840,30);
+            envNome.setBorder(BorderFactory.createLineBorder(Color.black));
+            tela.add(envNome);
+
+
+            
             envRg = new JTextField(20);
+            envRg.setBounds(210,190,170,30);
+            envRg.setBorder(BorderFactory.createLineBorder(Color.black));
+            envRg.setHorizontalAlignment(JLabel.CENTER);
+
+
             envEmail = new JTextField(100);
-            envPais = new JTextField(20);
+            envEmail.setBounds(210,230,351,30);
+            
+
+
+
+            envPais = new JTextField("BRASIL",20);
+            envPais.setBounds(210,270,351,30);
+            envPais.setBackground(Color.gray);
+            
+            
             envMunicipio = new JTextField(100);
             envLogadouro = new JTextField(20);
             envNumero = new JTextField(20);
             envBairro = new JTextField(20);
+            
             envExpedor = new JTextField(20);
+            envExpedor.setBounds(580,190,170,30);
+            tela.add(envExpedor);
+
             envCep = new JTextField(20);
+            envCep.setBounds(770,230,283,30);
+            
+
             envCpf = new JTextField(20);
+            envCpf.setBounds(580,110,200,30);
+            
+            envCpf.setBorder(BorderFactory.createLineBorder(Color.black));
+            envCpf.setHorizontalAlignment(JLabel.CENTER);
+            tela.add(envCpf);
+
             envUf = new JTextField(20);
+            envUf.setBounds(770,270,75,30);
+
             envFornecedor = new JTextField(20);
             envUF2 = new JTextField(20);
+            envUF2.setBounds(860,270,192,30);
+            envUF2.setBackground(Color.gray);
+            
+            tela.add(envUF2);
             envComplemento = new JTextField(20);
             envTelefone = new JTextField(20);
         //?------------ Entrada de dados ---------------
@@ -165,7 +210,7 @@ public class Tela extends JFrame{
         // Combo box
             String[] opcoes = {"Física", "Jurídica"};
             comboBox = new JComboBox<>(opcoes);
-            comboBox.setBounds(170,30,170,30);
+            comboBox.setBounds(210,110,170,30);
         
             
         //Radio Group
@@ -206,6 +251,8 @@ public class Tela extends JFrame{
     
         // checkbox
         checkFornecedor = new JCheckBox();
+        checkFornecedor.setBounds(1000,110,140,30);
+        
         tela.add(Tipo);
         tela.add(Nome);
         tela.add(Rg);
@@ -246,7 +293,7 @@ public class Tela extends JFrame{
         
         this.setContentPane(tela);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1000,600);
+        this.setSize(1200,600);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
